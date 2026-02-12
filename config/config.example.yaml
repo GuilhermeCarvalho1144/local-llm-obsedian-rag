@@ -1,0 +1,27 @@
+path:
+  vault_path: "vault/"
+  pdf_dir:
+    - "pdfs/"
+  data_dir: "data/" 
+  sqlite_db: "data/documents.db"
+  faiss_index_path: "data/faiss_index"
+
+chunking:
+  max_chars: 8000
+  overlap_chars: 600
+  md_by_headings: true
+  keep_latex_blocks: true
+
+retriever:
+  bm25_top_k: 25 
+  vector_top_k: 25
+  final_top_k: 8
+  deversify_max_per_doc: 2
+
+llm:
+  provider: "llma.cpp"
+  model_path: "models/ggml-model-q4_0.bin"
+  ctx_size: 4096
+  temperature: 0.3
+  max_new_tokens: 512
+  n_gpu_layers: -1
