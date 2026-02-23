@@ -7,6 +7,9 @@ requires-python = ">=3.12"
 dependencies = [
     "fastapi[standard]>=0.128.6",
     "httpx>=0.28.1",
+    "inngest>=0.5.15",
     "pytest>=9.0.2",
+    "python-dotenv>=1.2.1",
+    "qdrant-client>=1.17.0",
     "streamlit>=1.54.0",
 ]
