@@ -9,8 +9,15 @@ wheels/
 # Virtual environments
 .venv
 
+# hidden folders
+.*/ 
+
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints
 
 # Log files
 *.log
+
+# local docs
+docs/
+test/
