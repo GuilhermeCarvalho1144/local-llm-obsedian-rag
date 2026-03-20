@@ -1,8 +1,9 @@
+import ollama
 from llama_index.readers.file import PDFReader, MarkdownReader
 from llama_index.core.node_parser import SentenceSplitter
-from FlagEmbedding import FlagAutoModel
 
-model = FlagAutoModel.from_finetuned("BAAI/bge-m3", device="cuda:0")
+MODEL_NAME = "qwen3-embedding"
+
 
 spliter = SentenceSplitter(
     chunk_size=1000,
@@ -29,5 +30,5 @@ def load_and_chunk_markdown(path: str):
 
 
 def embed_chunks(chunks):
-    embeddings = model.encode(chunks)
-    return embeddings
+    response = ollama.embed(MODEL_NAME, input=chunks, dimensions=3072)
+    return response["embeddings"]
